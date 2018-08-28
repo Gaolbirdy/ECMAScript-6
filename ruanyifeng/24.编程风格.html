@@ -1,3 +1,6 @@
+<script>
+const log = console.log;
+</script>
 <!-- <script>
 'use strict';
 
@@ -33,7 +36,7 @@ console.log(i);
 </script> -->
 
 <!-- <script>
-'use strict'
+'use strict';
 
 if(true)
 {
@@ -44,7 +47,7 @@ if(true)
 </script> -->
 
 <!-- <script>
-'use strict'
+'use strict';
 
 let x = 1;
 var y = 2;
@@ -58,8 +61,8 @@ console.log(window.y);
 console.log(window.y === y);
 </script> -->
 
-<script>
-'use strict'
+<!-- <script>
+'use strict';
 
 // var a = 1, b = 2, c = 3;
 
@@ -71,4 +74,336 @@ const [a, b, c] = [1, 2, 3];
 console.log([a, b, c]);
 console.log(a, b, c);
 
+const func = function(){};
+
+</script> -->
+
+<!-- <script>
+'use strict';
+
+// const a = "foobar";
+// const b = 'foo' + a + 'bar';
+
+// log(a);
+// log(b);
+
+// const c = `foobar`;
+// log(c);
+
+const a = 'foobar';
+const b = `foo${a}bar`;
+const c = 'foobar';
+log(a);
+log(b);
+log(c);
+</script> -->
+
+<!-- <script>
+'use strict';
+
+const arr = [1, 2, 3, 4];
+
+// const first = arr[0];
+// const second = arr[1];
+
+const [, second, , fourth] = arr;
+// const [first, second, third] = arr;
+
+// log(first, second, third);
+log(second, fourth);
+</script> -->
+
+<!-- <script>
+'use strict';
+
+const user = {
+    firstName: 'popo',
+    lastName: 'L',
+};
+
+// function getFullName(user)
+// {
+//     const firstName = user.firstName;
+//     const lastName = user.lastName;
+    
+//     return `${firstName} ${lastName}`;
+// }
+
+const user2 = {
+    fn: 'gaolbird',
+    ln: 'lee',
+}
+
+// function getFullName(obj)
+// {
+//     // const { firstName, lastName } = obj;
+//     // return `${firstName} ${lastName}`;
+
+//     const { fn, ln } = obj;
+//     return `${fn} ${ln}`;
+// }
+
+// function getFullName({ fn, ln })
+// {
+//     return `${fn} ${ln}`; 
+// }
+
+function getFullName({ firstName, lastName })
+{
+    return `${firstName} ${lastName}`;
+}
+
+log(getFullName(user));
+log(getFullName(user2));
+</script> -->
+
+<!-- <script>
+'use strict';
+
+function processInput(input)
+{
+    const [left, right, top, bottom] = [1, 2, 3, 4];
+
+    // return [left, right, top, bottom];
+    return { left, right, top, bottom };
+}
+
+log(processInput());
+
+// const [left, right] = processInput();
+const { left, right } = processInput();
+
+log(left, right);
+</script> -->
+
+<!-- <script>
+'use strict';
+
+const [v1, v2] = [1, 2];
+
+// // bad
+// const a = { k1: v1, k2: v2, };
+// const b = {
+//     k1: v1 + 1,
+//     k2: v2 + 2
+// };
+
+// good
+const a = { k1: v1, k2: v2 };
+const b = {
+    k1: v1 + 1,
+    k2: v2 + 2,
+};
+
+log(a, b);
+</script> -->
+
+<!-- <script>
+'use strict';
+
+// const a = {};
+// a.x = 3;
+
+// const a = {};
+// Object.assign(a, { y: 3});
+
+const a = { x: null};
+a.x = 3;
+
+log(a);
+
+</script> -->
+
+<!-- <script>
+'use strict';
+
+const getKey = function (str) {
+    if(str === 'enabled')
+        return 'setting';
+    else
+        return 'no setting';
+};
+
+const obj = {
+    id: 5,
+    name: 'San Francisco',
+    ['age']: 30,
+    [getKey('enabled')]: true,
+};
+obj['sex'] = 'male';
+obj[getKey('')] = true;
+
+log(obj);
+</script> -->
+
+<!-- <script>
+'use strict';
+
+var ref = 'some value';
+
+// const atom = {
+//     ref: ref,
+//     value: 1,
+
+//     // addValue: function(value){
+//     //     return atom.value + value + this.value;
+//     //     // return this.value + value;
+//     // }
+
+//     // addValue: (value) => {
+//     //     return atom.value + value;
+//     //     // return this.value + value;
+//     // },
+
+//     // addValue: value => {
+//     //     return atom.value + value;
+//     //     // return this.value + value;
+//     // },
+
+//     // addValue: (value) => {
+//     //     return this.value;  // 这样this.value会是undefined
+//     //     // return this.value + value;
+//     // },
+
+//     // addValue: function(){
+//     //     return this;    // return atom对象自身
+//     //     // return this === atom;
+//     // }
+
+//     addValue: () => {
+//         return this;    // return Window对象
+//         // return this === atom;
+//     }
+// };
+
+const atom = {
+    ref,
+    value: 1,
+
+    addValue(value) {
+        return atom.value + value + this.value;
+    }
+}
+
+log(atom.addValue(100));
+log(atom);
+</script> -->
+
+<!-- <script>
+'use strict';
+
+const items = [1, 2, 3, 4, 5];
+const items2 = [1, 2, 3, 4];
+
+// const len = items.length;
+// const itemsCopy = [];
+// let i;
+
+// for(i = 0; i < len; i++){
+//     itemsCopy[i] = items[i];
+// }
+
+let itemsCopy = [...items];
+log(itemsCopy);
+
+itemsCopy = [...items2];
+
+log(itemsCopy);
+log(itemsCopy == items);
+log(itemsCopy === items);
+
+</script> -->
+
+<!-- <script>
+'use strict';
+
+const foo = document.querySelectorAll('head');
+// const foo = document.querySelectorAll('.foo');
+// const foo = [1, 2, 3];
+
+const nodes = Array.from(foo);
+
+log(foo, typeof foo);
+log(nodes, typeof nodes);
+</script> -->
+
+<!-- <script>
+'use strict';
+
+(() => {
+    log('hello');
+    log(this);
+})();
+
+(function func() {
+    log(this);
+})();
+</script> -->
+
+<!-- <script>
+'use strict';
+
+// const res = [1, 2, 3].map(function (x) {
+//     log(this);   // undefined
+//     return x * x;
+// });
+
+// const res = [1, 2, 3].map((x) => {
+//     log(this);  // 绑定Window
+//     return x * x;
+// });
+
+const res = [1, 2, 3].map(x => log(this));
+// const res = [1, 2, 3].map(x => x * x);
+
+log(res);
+</script> -->
+
+<!-- <script>
+'use strict';
+
+const method = function(x) {
+    log(this);
+    log(x);
+    log(arguments);
+};
+
+// const obj = {};
+// // method.apply(document);
+// // method.apply(obj);
+
+// const self = this;
+
+// const boundMethod = function(...params){
+//     return method.apply(self, params);
+// };
+
+// const boundMethod = method.bind(document);
+
+// const boundMethod = (...params) => method.apply(this, params);
+const boundMethod = (...params) => method.apply(document, params);
+
+boundMethod([1, 2, 3, 4]);
+boundMethod(5, 6, 7);
+
+method(document);
+
+</script> -->
+
+<script>
+'use strict'
+
+// function divide(a, b, option = false){
+//     log(a, b, option);
+// }
+
+function divide(a, b, { option = false } = {}) {
+    log(a, b, option, typeof option);
+}
+
+
+divide(1, 2);
+divide(1, 2, true);
+divide(1, 2, {});
+divide(1, 2, {x: true});
 </script>
