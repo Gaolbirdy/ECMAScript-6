@@ -391,7 +391,7 @@ method(document);
 </script> -->
 
 <script>
-'use strict'
+// 'use strict'
 
 // function divide(a, b, option = false){
 //     log(a, b, option);
@@ -401,9 +401,17 @@ function divide(a, b, { option = false } = {}) {
     log(a, b, option, typeof option);
 }
 
+{option = false} = {};
 
-divide(1, 2);
-divide(1, 2, true);
-divide(1, 2, {});
-divide(1, 2, {x: true});
+// divide(1, 2);
+
+// function divide(a, b, { option = false } = {}) {
+//     log(a, b, option, typeof option);
+// }
+
+
+// divide(1, 2);
+// divide(1, 2, true);
+// divide(1, 2, {});
+// divide(1, 2, {x: true});
 </script>
