@@ -1,5 +1,6 @@
 <script>
-const log = console.log;
+// const log = console.log;
+const { log } = console;
 </script>
 <!-- <script>
 'use strict';
@@ -390,7 +391,7 @@ method(document);
 
 </script> -->
 
-<script>
+<!-- <script>
 // 'use strict'
 
 // function divide(a, b, option = false){
@@ -401,9 +402,8 @@ function divide(a, b, { option = false } = {}) {
     log(a, b, option, typeof option);
 }
 
-{option = false} = {};
-
-// divide(1, 2);
+divide(1, 2);
+divide(1, 2, { option: true });
 
 // function divide(a, b, { option = false } = {}) {
 //     log(a, b, option, typeof option);
@@ -414,4 +414,61 @@ function divide(a, b, { option = false } = {}) {
 // divide(1, 2, true);
 // divide(1, 2, {});
 // divide(1, 2, {x: true});
+</script> -->
+
+<!-- <script>
+'use strict';
+
+// function concatenateAll(){
+//     const args = Array.prototype.slice.call(arguments);
+//     return args.join('');
+// }
+
+function concatenateAll(...args){
+    return args.join('');
+}
+
+log(concatenateAll('1', 33, '2', true));
+</script> -->
+
+<!-- <script>
+'use strict';
+
+// function handleThings(opts){
+//     opts = opts || {};
+// }
+
+function handleThings(opts = {}){
+
+}
+
+</script> -->
+
+<script>
+'use strict';
+
+let map = new Map();
+map.set('k1', 'v1');
+map.set('k2', 'v2');
+map.set('k3', 'v3');
+
+// log(map);
+
+// for(let key of map.keys()){
+//     log(key);
+// }
+
+// for(let [key] of map){
+//     log(key);
+// }
+
+// for (let value of map.values()){
+//     log(value);
+// }
+
+for (let item of map.entries()){
+    log(item);
+    log(item[0], item[1]);
+}
+
 </script>
