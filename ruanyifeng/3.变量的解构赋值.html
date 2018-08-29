@@ -1,0 +1,250 @@
+<script>
+const log = console.log;
+</script>
+
+<!-- <script>
+// let a = 1;
+// let b = 2;
+// let c = 3;
+
+// let [a, b, c] = [1, 2, 3];
+// log(a, b, c);
+// [a, , c] = [4, 5, 6];
+// log(a, b, c);
+
+// let [foo, [[bar], baz]] = [1, [[2], 3]];
+// log(foo, bar, baz);
+
+// let [ , , third] = ['foo', 'bar', 'baz'];
+// log(third);
+
+// let [head, ...tail] = [1, 2, 3, 4];
+// log(head, tail);
+
+// let [x, y, ...z] = ['a'];
+// log(x, y, z);
+
+// let [foo] = [];
+// log(foo);
+
+// let [bar, foo] = [1];
+// log(foo);
+
+// let [x, y] = [1, 2, 3];
+// log(x, y);
+
+// let [a, [b], d] = [1, [2, 3], 4];
+// log(a, b, d);
+
+// let [a] = 1;
+// let [b] = false;
+// let [c] = NaN;
+// let [d] = undefined;
+// let [e] = null;
+// let [f] = {};
+// let [g] = Function;
+// let [h] = Object;
+
+// let [x, y, z] = new Set(['a', 'b', 'c']);
+// log(x, y, z);
+
+function* fibs(){
+    let a = 0;
+    let b = 1;
+    while(true){
+        yield a;
+        [a, b] = [b, a + b];
+    }
+}
+
+let [first, second, third, fourth, fifth, sixth] = fibs();
+log(first, second, third, fourth, fifth, sixth);
+
+</script> -->
+
+<!-- <script>
+// let [foo = true] = [];
+// log(foo);
+// [foo] = [false];
+// log(foo);
+
+// let [x, y = 'b'] = ['a'];
+// log(x, y);
+
+// let [x, y = 'b'] = ['a', undefined];
+// log(x, y);
+
+// let [x, y = 'b'] = ['a', null];
+// log(x, y);
+
+// log(null == undefined);
+// log(null === undefined);
+// log(null == 'null');
+// log(null === 'null');
+// log(undefined == 'undefined');
+// log(undefined === 'undefined');
+
+// let [x = 1] = [undefined];
+// log(x);
+
+// let [y = 1] = [null];
+// log(y);
+
+function f(){
+    log('aaa');
+}
+
+// let [x = f()] = [1];
+// log(x);
+
+// let [y = f()] = [];
+// log(y);
+
+// let [z = f()] = [undefined];
+// log(z);
+
+// let [y = f] = [undefined];
+// log(y);
+
+// log([1][0]);
+// log([2, 4][0]);
+// log([2, 4][1]);
+// log([2, , 4][1]);
+// log([2, 3, 4][2]);
+
+// let x;
+// if([1][0] === undefined){
+//     x = f();
+// }
+// else{
+//     x = [1][0];
+// }
+
+// let x;
+// if([undefined][0] === undefined){
+//     x = f();
+// }
+// else{
+//     x = [1][0];
+// }
+
+// log(x);
+
+// let [x = 1, y = x] = [];
+// let [x = 1, y = x] = [2];
+// let [x = 1, y = x] = [1, 2];
+// let [x = y, y = 1] = [];
+let [y = 1, x = y] = [];
+
+
+log(x, y);
+
+</script> -->
+
+<script>
+// let { foo, bar } = { foo: 'aaa', bar: 'bbb' };
+// log(foo, bar);
+
+// let { a, bar } = { foo: 'aaa', bar: 'bbb' };
+// log(a, bar);
+
+// let { bar, foo } = { foo: 'aaa', bar: 'bbb'};
+// let { baz } = { foo: 'aaa', bar: 'bbb'};
+// log(foo, bar);
+// log(baz);
+
+// let { foo: baz }  = { foo: 'aaa', bar: 'bbb'};
+// // log(foo);
+// log(baz);
+
+// let obj = { first: 'hello', last: 'world' };
+// let { first: f, last: l } = obj;
+// log(f, l);
+
+// let { foo: foo, bar: bar} = { foo: 'aaa', bar: 'bbb' };
+// log(foo, bar);
+
+// let { foo: f, bar: b} = { foo: 'aaa', bar: 'bbb' };
+// log(foo, bar);
+
+// let { foo: f, bar: b} = { foo: 'aaa', bar: 'bbb' };
+// log(f, b);
+
+// let { f: foo, bar: bar} = { foo: 'aaa', bar: 'bbb' };
+// log(foo, bar);
+
+// let { foo: baz } = { foo: 'aaa', bar: 'bbb' };
+// log(baz);
+// log(foo);
+
+// let obj = {
+//     p: [
+//         'hello',
+//         { y: 'world'}
+//     ],
+// };
+
+// log(obj.p.length);
+// log(obj.p);
+// log(obj);
+
+// let { p: [x, y] } = obj;
+// log(x, y);
+
+// let {p} = obj;
+// log(p);
+
+// let { p: [x, { z }] } = obj;
+// log(x, z);
+
+// let { p: [x, {y: z }] } = obj;
+// log(x, z);
+// log(y);
+
+// let { p, p: [x, { y }] } = obj;
+// log(x, y, p);
+
+// let { p: z, p: [x, { y }] } = obj;
+// log(x, y, z);
+// log(p);
+
+// const node = {
+//     loc: {
+//         start: {
+//             line: 1,
+//             column: 5
+//         }
+//     }
+// };
+
+// let {loc, loc: {start}, loc: {start: { line }}, loc: {start: { column }} } = node;
+// log(loc);
+// log(start);
+// log(line);
+// log(column);
+
+// let obj = {};
+// let arr = [1];
+
+// // let { foo: f, bar: b } = { foo: 123, bar: true};
+
+// ({ foo: obj.prop, bar: arr[1] } = { foo: 123, bar: true } );
+// log(obj)
+// log(arr);
+
+// var {x = 3} = {};
+// log(x);
+
+// var {x, y = 5} = {x: 1};
+// log(x, y);
+
+// var {x: y = 3} = {};
+// log(y);
+
+// var {x: y = 3} = {x: 4};
+// log(y);
+
+// var {x = 3} = {y: 5};
+// log(x);
+
+</script>
