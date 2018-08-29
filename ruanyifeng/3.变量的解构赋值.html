@@ -1,5 +1,6 @@
 <script>
-const log = console.log;
+// const log = console.log;
+const { log } = console;
 </script>
 
 <!-- <script>
@@ -141,7 +142,7 @@ log(x, y);
 
 </script> -->
 
-<script>
+<!-- <script>
 // let { foo, bar } = { foo: 'aaa', bar: 'bbb' };
 // log(foo, bar);
 
@@ -246,5 +247,126 @@ log(x, y);
 
 // var {x = 3} = {y: 5};
 // log(x);
+
+// var { message: msg = 'something went wrong' } = {};
+// log(msg);
+
+// var { bool: b = false } = {};
+// log(b);
+
+// var { x = 3 } = { x: undefined };
+// log(x);
+// var { y = 3 } = { y: null };
+// log(y);
+
+// let { foo } = { bar: 'baz' };
+// log(foo);
+
+// let { foo : bar } = { foo: 'baz' };
+// log(bar);
+
+// let _tmp = { baz: 'baz' };
+// log(_tmp.foo.bar);
+
+// let { foo: { bar } } = { baz: 'baz'};
+// log(bar);
+
+// let { foo: { bar } } = { foo: { bar: 'baz' } };
+// // let { foo: bar } = { foo: { bar: 'baz' } };
+// // let { foo: { bar: a } } = { foo: { bar: 'baz' } };
+// log(bar);
+
+// let x;
+// ({x} = { x: 1 });
+// log(x);
+
+// let { a } = [1, 2];
+// log(a);
+
+// let {} = [true, false];
+// ({} = [true, false]);
+// ({} = 'abc');
+// ({} = []);
+
+// const obj = { hello() {log('hello wolrd');}};
+// let { hello } = obj;
+// hello();
+
+// let { sin, cos } = Math;
+// log(sin(90));
+
+let arr = [1, 2, 3];
+let { 0: first, [arr.length - 1]: last } = arr;
+log(first, last);
+
+</script> -->
+
+<!-- <script>
+const [a, b, c, d, e] = 'hello';
+log(a, b, c, d, e);
+
+let { length: len } =  'hello';
+log(len);
+
+</script> -->
+
+<!-- <script>
+// let {toString: s} = 123;
+// log(typeof 123);
+// log(s);
+// log(s === Number.prototype.toString);
+
+// let { toString: s } = true;
+// log(typeof true);
+// log(s);
+// log(s === Boolean.prototype.toString);
+
+// let { toString: x } = undefined;
+// log(x);
+
+// let { prop: x } = undefined;
+// log(x);
+
+let { prop: y } = null;
+log(y);
+
+</script> -->
+
+<script>
+// function add([x, y]){
+//     return x + y;
+// }
+// log(add([1, 2]));
+// log(add()); // 这样会报错
+
+// function add([x, y] = [10, 20]){
+//     return x + y;
+// }
+// log(add([1, 2]));
+// log(add());
+
+// log([[1, 2], [3, 4]].map(([a, b]) => a + b));
+
+// function move({ x = 0, y = 0})
+// {
+//     return [x, y];
+// }
+// log(move({ x: 3, y: 8}));
+// log(move({ x: 3}));
+// log(move({}));
+// log(move());    // 这样会报错
+
+// function move({ x = 0, y = 0} = { x: 100}) // = {} 是等号左边对象参数的默认值
+// {
+//     return [x, y];
+// }
+// log(move({ x: 3, y: 8}));
+// log(move({ x: 3}));
+// log(move({}));
+// log(move());
+// log(move(undefined));
+// log(move(null));
+
+
 
 </script>
