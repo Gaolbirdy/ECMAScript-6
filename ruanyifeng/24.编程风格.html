@@ -444,7 +444,7 @@ function handleThings(opts = {}){
 
 </script> -->
 
-<script>
+<!-- <script>
 'use strict';
 
 let map = new Map();
@@ -470,5 +470,100 @@ for (let item of map.entries()){
     log(item);
     log(item[0], item[1]);
 }
+
+</script> -->
+
+<!-- <script>
+'use strict';
+
+// function Queue(contents = []){
+//     this._queue = [...contents];
+// }
+// Queue.prototype.pop = function() {
+//     const value = this._queue[0];
+//     this._queue.splice(0, 1)
+//     return value;
+// }
+
+class Queue {
+    constructor(contents = [])
+    {
+        this._queue = [...contents];
+    }
+
+    pop() {
+        const value = this._queue[0];
+        this._queue.splice(0, 1);
+        return value;
+    }
+}
+
+// const inherits = require('inherits');
+// function PeekableQueue(contents) {
+//     Queue.apply(this, contents);
+// }
+// inherits(PeekableQueue, Queue);
+// PeekableQueue.prototype.peek = function(){
+//     return this._queue[0];
+// };
+
+class PeekableQueue extends Queue {
+    peek() {
+        return this._queue[0];
+    }
+}
+
+</script> -->
+
+<!-- <script>
+// const moduleA = require('moduleA');
+// const func1 = moduleA.func1;
+// const func2 = moduleA.func2;
+
+// import { fucn1, func2 } from 'moduleA';
+
+// var React = require('react');
+
+// var Breadcrumbs = React.createClass({
+//     render() {
+//         return <nav / >;
+//     }
+// });
+
+// module.exports =  Breadcrumbs;
+
+
+// import React from 'react';
+
+// class Breadcrumbs extends React.Component {
+//     render() {
+//         return <nav />;
+//     }
+// }
+
+// export default Breadcrumbs;
+
+// import * as myObject from './importModule';
+
+// import myObject from './importModule';
+
+
+// function makeStyleGuide() {
+
+// }
+
+// export default makeStyleGuide;
+
+const StyleGuide = {
+    es6: {
+
+    }
+};
+
+export default StyleGuide;
+
+</script> -->
+
+<script>
 
 </script>
