@@ -137,3 +137,8 @@
 
 // export const users = ['root', 'admin', 'staff', 'ceo', 'chief', 'moderator'];
 
+export function addTextToBody(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    document.body.appendChild(div);
+}

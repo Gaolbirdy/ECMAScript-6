@@ -1,0 +1,32 @@
+<!-- <script>
+
+</script>
+
+<script src="module.js" defer>
+
+</script>
+
+<script src="module.js" async>
+
+</script> -->
+
+<!-- <script type="module" src="./module.js"></script> -->
+<!-- <script type="module" src="./module.js" async></script> -->
+<!-- <script type="module" src="./module.js" defer></script> -->
+
+<!-- <script type="module">
+    // import utils from 'https://example.com/js/utils.js';
+
+    // const x = 1;
+
+    // console.log(x === window.x); //false
+    // console.log(this === undefined); // true
+
+    // const isNotModuleScript = this !== undefined;
+    // console.log(isNotModuleScript);
+</script> -->
+
+<script type="module">
+    import {addTextToBody} from './module.js';
+    addTextToBody('Modules are pretty cool.');
+</script>
