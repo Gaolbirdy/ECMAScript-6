@@ -229,7 +229,7 @@
     }
 </script> -->
 
-<script>
+<!-- <script>
     // const PI = 3.1415;
     // PI = 3;
 
@@ -251,8 +251,94 @@
     // const message = 'goodbye';
     // const age = 30;
 
-    const foo = {};
-    foo.prop = 123;
-    foo = {};
+    // const foo = {x: 1};
+    // foo.prop = 123;
+    // // foo = {};
+    // foo.x = 2;
+    // log(foo);
+
+    // const a = [];
+    // a.push('hello');
+    // a.length = 0;
+    // log(a);
+    // a= ['Dave'];
     
+    // 'use strict';
+    // const foo = Object.freeze({x: 1});
+    // foo.prop = 123;
+    // log(foo);
+    // foo.x = 2;
+    // log(foo);
+
+    var constantize = (obj) => {
+        Object.freeze(obj);
+        Object.keys(obj).forEach( (key, i) => {
+            if(typeof obj[key] === 'object'){
+                constantize(obj[key]);
+            }
+        });
+    };
+</script> -->
+
+<!-- <script>
+    // window.a = 1;
+    // log(a);
+    // log(a === window.a);
+
+    // b = 2;
+    // log(window.b);
+    // log(window.b === b);
+
+    // function f() {};
+    // log(window.f);
+
+    var a = 1;
+    log(window.a);
+
+    let b = 1;
+    log(window.b);
+</script> -->
+
+<script>
+    // 'use strict'
+
+    // log(this);
+    // log(this === window);
+
+    // function f() {
+    //     log(this);
+    //     // this.a = 100;
+    // }
+    // // f();
+
+    // log(typeof new f());
+    // // log(new f().a)
+
+    // let x = {func: function() {
+    //     log(this);
+    // }};
+    // x.func();
+
+    // let f = new Function('return this;');
+    // log(f);
+    // log(typeof f);
+    // log(f());
+
+    let g = (typeof window !== 'undefined'
+        ? window
+        : (typeof progress === 'object' &&
+           typeof require === 'function' &&
+           typeof global === 'object')
+           ? global
+           : this);
+    log(g);
+    
+    var getGlobal = function() {
+        if(typeof self !== 'undefined') { return self;}
+        if(typeof window !== 'undefined') { return window;}
+        if(typeof global !== 'undefined') { return global;}
+        throw new Error('unable to locate global object');
+    }
+
+    log(getGlobal());
 </script>
