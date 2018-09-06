@@ -1,0 +1,268 @@
+<script>
+const { log } = console;
+</script>
+
+<!-- <script>
+// let s = Symbol();
+// log(s);
+// log(typeof s);
+
+// let s1 = Symbol('foo');
+// let s2 = Symbol('bar');
+// let s3 = Symbol('bar');
+// let s4 = s3;
+
+// log(s1);
+// log(s2);
+// log(s3);
+// log(s4);
+// log(s2 == s3);
+// log(s2 === s3);
+// log(s3 == s4);
+// log(s3 === s4);
+
+// log(s1.toString());
+// log(s2.toString());
+
+// const obj = {
+//     toString() {
+//         return 'abc';
+//     }
+// };
+// const sym = Symbol(obj);
+// log(sym);
+
+// let s1 = Symbol();
+// let s2 = Symbol();
+// log(s1 === s2);
+
+// let s1 = Symbol('foo');
+// let s2 = Symbol('foo');
+// log(s1 === s2);
+
+// let sym = Symbol('My symbol');
+
+// // log('your symbol is ' + sym);
+// // log(`your symbol is ${sym}`);
+
+// log(String(sym));
+// log(sym.toString());
+
+let sym = Symbol();
+// log(Boolean(sym));
+// log(Boolean(!sym));
+// if (sym) {
+//     log(true);
+// }
+
+// Number(sym);
+log(sym + 2);
+</script> -->
+
+<!-- <script>
+// let mySymbol = Symbol();
+
+// // let a = {};
+// // a[mySymbol] = 'Hello!';
+
+// // let a = {
+// //     [mySymbol]: 'Hello'
+// // };
+
+// let a = {};
+// Object.defineProperty(a, mySymbol, {value: 'Hello!'});
+
+// log(a[mySymbol]);
+
+
+// a.mySymbol = 'Hello!';
+// log(a.mySymbol);
+// log(a['mySymbol']);
+// log(a.mySymbol === a['mySymbol']);
+
+// const mySymbol = Symbol();
+// const a = {};
+// a.mySymbol = 'hello';
+// log(a[mySymbol]);
+// log(a['mySymbol']);
+
+// let s = Symbol();
+// let obj = {
+//     [s]: function (arg) {log(arg);}
+// };
+// obj[s](123);
+
+// let obj = {
+//     [s](arg) {}
+// };
+
+// const l = {};
+
+// l.levels = {
+//     DEBUG: Symbol('debug'),
+//     INFO: Symbol('info'),
+//     WARN: Symbol('warn'),
+// };
+
+// log(l);
+// log(l.levels.DEBUG, 'debug message');
+// log(l.levels.INFO, 'info message');
+
+const COLOR_RED = Symbol();
+const COLOR_GREEN = Symbol();
+
+function getComplement(color) {
+    switch (color) {
+        case COLOR_RED:
+            return COLOR_GREEN;
+        case COLOR_GREEN:
+            return COLOR_RED;
+        default:
+            throw new Error('Undefined color');
+    }
+}
+
+</script> -->
+
+<!-- <script>
+// function getArea(shape, options){
+//     let area = 0;
+
+//     switch (shape) {
+//         case 'Triangle':
+//             area = .5 * options.width * options.height;
+//             break;
+//         default:
+//             break;
+//     }
+
+//     return area;
+// }
+
+// getArea('Triangle', { width: 100, height: 100});
+
+const shapeType = {
+    // triangle: 'Triangle'
+    triangle: Symbol()
+};
+
+function getArea(shape, options) {
+    let area = 0;
+    switch (shape) {
+        case shapeType.triangle:
+            area = .5 * options.width * options.height;            
+            break;
+    }
+    return area;
+}
+
+log(getArea(shapeType.triangle, { width: 100, height: 100}));
+</script> -->
+
+<!-- <script>
+// const obj = {};
+// let a = Symbol('a');
+// let b = Symbol('b');
+
+// obj[a] = 'hello';
+// obj[b] = 'world';
+
+// const objectSymbols = Object.getOwnPropertySymbols(obj);
+// log(objectSymbols);
+
+// const obj = {};
+
+// let foo = Symbol('foo');
+
+// Object.defineProperty(obj, foo, {value: 'foobar'});
+
+// for(let i in obj){
+//     log(i);
+// }
+
+// log(Object.getOwnPropertyNames(obj));
+
+// log(Object.getOwnPropertySymbols(obj));
+
+
+// let obj = {
+//     [Symbol('my_key')]: 1,
+//     enum: 2,
+//     nonEnum: 3
+// };
+
+// log(Reflect.ownKeys(obj));
+
+let size = Symbol('size');
+
+class Collection {
+    constructor() {
+        this[size] = 0;
+    }
+
+    add(item) {
+        this[this[size]] = item;
+        this[size]++;
+    }
+
+    static sizeof(instance) {
+        return instance[size];
+    }
+
+    sizeof() {
+        return this[size];
+    }
+}
+
+let x = new Collection();
+log(x[size]);
+log(Collection.sizeof(x));
+log(x.sizeof());
+
+x.add('foo');
+log(x[size]);
+log(Collection.sizeof(x));
+log(x.sizeof());
+log(x['0']);
+log(x[0]);
+
+log(Object.keys(x));
+log(Object.getOwnPropertyNames(x));
+log(Object.getOwnPropertySymbols(x));
+
+</script> -->
+
+<!-- <script>
+// let s1 = Symbol('foo');
+// let s2 = Symbol('foo');
+// log(s1 === s2);
+
+// let s1 = Symbol.for('foo');
+// let s2 = Symbol.for('foo');
+// log(s1 === s2);
+
+// let s1 = Symbol('foo');
+// let s2 = Symbol.for('foo');
+// log(s1 === s2);
+
+// log(Symbol.for('bar') === Symbol.for('bar'));
+// log(Symbol('bar') === Symbol('bar'));
+
+// let s1 = Symbol.for('foo')
+// log(Symbol.keyFor(s1));
+// log(Symbol.keyFor(Symbol.for('foo')));
+
+// let s2 = Symbol('foo');
+// log(Symbol.keyFor(s2));
+
+iframe = document.createElement('iframe');
+iframe.src = String(window.location);
+document.body.appendChild(iframe);
+
+iframe.contentWindow.Symbol.for('foo') === Symbol.for('foo');
+
+</script> -->
+
+<script>
+
+</script>
