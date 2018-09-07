@@ -264,5 +264,47 @@ iframe.contentWindow.Symbol.for('foo') === Symbol.for('foo');
 </script> -->
 
 <script>
+// class MyClass {
+//     f (foo) {
+//         return foo instanceof Array;
+//     }
+// }
+// log(new MyClass().f([1,2,3]));
+
+// class MyClass {
+//     [Symbol.hasInstance](foo) {
+//         return foo instanceof Array;
+//     }
+// }
+
+// log([1, 2, 3] instanceof new MyClass());
+// // log(new MyClass()[Symbol.hasInstance]([1, 2, 3]));
+
+class Even {
+    static [Symbol.hasInstance](obj) {
+        return Number(obj) % 2 === 0;
+    }
+}
+
+log(1 instanceof Even);
+log(2 instanceof Even);
+log('2' instanceof Even);
+log('adsf' instanceof Even);
+log('' instanceof Even);
+
+const Odd = {
+    [Symbol.hasInstance](obj) {
+        return !isNaN(obj) && Number(obj) % 2 !== 0;
+    }
+};
+
+log(1 instanceof Odd);
+log(2 instanceof Odd);
+log('2' instanceof Odd);
+log('adsf' instanceof Odd);
+log('' instanceof Odd);
+
+// log(NaN === NaN);
+// log(NaN == NaN);
 
 </script>
