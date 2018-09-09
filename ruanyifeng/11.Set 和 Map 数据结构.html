@@ -1,0 +1,371 @@
+<script>
+    const { log } = console;
+</script>
+
+<!-- <script>
+    // const s = new Set();
+    // log(s, typeof s);
+
+    // [2, 3, 5, 4, 5, 2, 2].forEach(x => s.add(x));
+    
+    // for(let i of s) {
+    //     log(i);
+    // }
+
+    // const set = new Set([1, 2, 3 ,4 ]);
+    // log(set);
+    // log([...set]);
+
+    // const items = new Set([1, 2, 3, 4, 5, 5, 5, 5]);
+    // log(items.size);
+
+    // const set = new Set(document.querySelectorAll('div'));
+    // log(set);
+    // log(set.size);
+
+    // const set = new Set();
+    // document.querySelectorAll('div').forEach(div => set.add(div));
+    // log(set.size);
+
+    // log(...[1, 2, 3, 3]);
+    // log(...new Set([1, 2, 3, 3]));
+
+    // let set = new Set();
+    // let a = NaN;
+    // let b = NaN;
+    // let c = undefined;
+    // let d = null;
+    // set.add(a);
+    // set.add(b);
+    // set.add(c);
+    // set.add(d);
+    // log(set);
+
+    let set = new Set();
+    set.add({});
+    log(set.size);
+
+    set.add({});
+    log(set.size);
+    log(set);
+</script> -->
+
+<!-- <script>
+    // let s = new Set();
+    // s.add(1).add(2).add(2);
+
+    // log(s.size);
+
+    // log(s.has(1));
+    // log(s.has(2));
+    // log(s.has(3));
+
+    // s.delete(2);
+    // log(s.has(2));
+
+    // const propertiyes = {
+    //     'width': 1,
+    //     'height': 1
+    // };
+
+    // if(propertiyes['width'])
+    //     log(propertiyes['width']);
+
+    // const propertiyes = new Set();
+
+    // propertiyes.add('width');
+    // propertiyes.add('height');
+
+    // if(propertiyes.has('width'))
+    //     log(propertiyes);
+
+    // const items = new Set([1, 2, 3, 4, 5]);
+    // const array = Array.from(items);
+    // log(array);
+
+    // function dedupe(array) {
+    //     return Array.from(new Set(array));
+    // }
+
+    // log(dedupe([1, 1, 2, 3]));
+
+    // let set = new Set(['red', 'green', 'blue']);
+
+    // // log(set.keys());
+    // for(let item of set.keys()) {
+    //     log(item);
+    // }
+
+    // for(let item of set.values()) {
+    //     log(item);
+    // }
+
+    // for(let item of set.entries()) {
+    //     log(item);
+    // }
+
+    // log(Set.prototype[Symbol.iterator] === Set.prototype.values);
+
+    // let set = new Set(['red', 'green', 'blue']);
+
+    // for(let x of set){
+    //     log(x);
+    // }
+
+    // let  set = new Set([1, 4, 9]);
+    // set.forEach((value, key) => log(key + ' : ' + value));
+
+    // let set = new Set(['red', 'green', 'bule']);
+    // let arr = [...set];
+    // log(arr);
+
+    // let arr = [3, 5, 2, 2, 5, 5];
+    // let unique = [...new Set(arr)];
+    // log(unique);
+
+    // let set = new Set([1, 2, 3, 2]);
+    // set = new Set([...set].map(x => x * 2));
+    // log(set);
+
+    // let set = new Set([1, 2, 3, 4, 5]);
+    // set = new Set([...set].filter(x => (x % 2) == 0));
+    // log(set);
+
+    // let a = new Set([1, 2, 3]);
+    // let b = new Set([4, 3, 2]);
+
+    // // log(new Set([[1, 2], [2, 3]]));
+    // let union = new Set([...a, ...b]);
+    // log(union);
+
+    // let intersect = new Set([...a].filter(x => b.has(x)));
+    // log(intersect);
+
+    // let difference = new Set([...a].filter(x => !b.has(x)));
+    // log(difference);
+
+    // let set = new Set([1, 2, 3]);
+    // set = new Set([...set].map(val => val * 2));
+    // log(set);
+
+    let set = new Set([1, 2, 3]);
+    set = new Set(Array.from(set, val => val * 2));
+    log(set);
+</script> -->
+
+<!-- <script>
+    // const ws = new WeakSet();
+    // ws.add(1);
+    // ws.add(Symbol());
+
+    // const ws = new WeakSet([1, 2]);
+
+    // const a = [[1, 2], [3, 4]];
+    // const ws = new WeakSet(a);
+    // log(ws);
+
+    // const ws = new WeakSet();
+    // const obj = {};
+    // const foo = {};
+
+    // ws.add(window);
+    // ws.add(obj);
+
+    // log(ws);
+    // log(ws.has(window));
+    // log(ws.has(foo));
+
+    // ws.delete(window);
+    // log(ws.has(window));
+
+    // log(ws.size);
+    // log(ws.forEach);
+
+    // ws.forEach(function(item) { log('WeakSet has ' + item)});
+
+    const foos = new WeakSet();
+    class Foo {
+        constructor() {
+            foos.add(this);
+        }
+
+        method() {
+            if(!foos.has(this))
+                throw new TypeError('Foo.prototype.method 只能在Foo的实例上调用！');
+        }
+    }
+</script> -->
+
+<div id='myDiv'>
+    
+</div>
+<script>
+    // const data = {};
+    // const element = document.getElementById('myDiv');
+    
+    // data[element] = 'metadata';
+    // log(data);
+    // log(data['[object HTMLDivElement]']);
+
+    // const m = new Map();
+    // const o = {p: 'Hello World'};
+
+    // m.set(o, 'content');
+    // log(m);
+    // log(m.get(o));
+
+    // log(m.has(o));
+    // m.delete(o);
+    // log(m.has(o));
+
+    // const map = new Map([
+    //     ['name', '张三'],
+    //     ['title', 'Author']
+    // ]);
+
+    // log(map.size);
+    // log(map.has('name'));
+    // log(map.get('name'));
+    // log(map.has('title'));
+    // log(map.get('title'));
+
+    // const items = [
+    //     ['name', '张三'],
+    //     ['title', 'Author']
+    // ];
+
+    // const map = new Map();
+    // items.forEach(
+    //     ([key, value]) => map.set(key, value)
+    // );
+    // log(map);
+
+    // const set = new Set([
+    //     ['foo', 1],
+    //     ['bar', 2]
+    // ]);
+
+    // const m1 = new Map(set);
+    // log(m1);
+    // log(m1.get('foo'));
+
+    // const m2 = new Map([['baz', 3]]);
+    // const m3 = new Map(m2);
+    // log(m3);
+    // log(m3.get('baz'));
+
+    // const map = new Map();
+    // map
+    // .set(1, 'aaa')
+    // .set(1, 'bbb');
+
+    // log(map.get(1));
+
+    // log(new Map().get('adfadadsf'));
+
+    // const map = new Map();
+    // // let o = ['a'];
+
+    // // map.set(o, 555);
+    // // log(map.get(o));
+    // // log(map.get(['a']));
+
+    // map.set(['a'], 555);
+    // log(map.get(['a']));
+    // log(map);
+
+    // const map = new Map();
+
+    // const k1 = ['a'];
+    // const k2 = ['a'];
+
+    // map
+    // .set(k1, 111)
+    // .set(k2, 222);
+
+    // log(map);
+    // log(map.get(['a']));
+    // log(map.get(k1));
+    // log(map.get(k2));
+
+    // log(typeof k1);
+    // log(k2 == k1);
+    // log(k2 === k1);
+    // log(k2 == ['a']);
+    // log(k2 === ['a']);
+    // log(['a'] == ['a']);
+    // log(['a'] === ['a']);
+
+    // let map = new Map();
+
+    // map.set(-0, 123);
+    // log(map.get(+0));
+
+    // map.set(true, 1);
+    // map.set('true', 2);
+    // log(map.get(true));
+
+    // map.set(undefined, 3);
+    // map.set(null, 4);
+    // log(map.get(undefined));
+
+    // map.set(NaN, 123);
+    // map.set(NaN, 456);
+    // log(map.get(NaN));
+
+    // log(map);
+    // log(map.size);
+
+    // const map = new Map();
+    // map.set('foo', true);
+    // map.set('bar', false);
+
+    // log(map.size);
+
+    // const m = new Map();
+    
+    // m.set('edition', 6);
+    // m.set(262, 'standard');
+    // m.set(undefined, 'nah');
+    // log(m);
+
+    // let map = new Map()
+    //     .set(1, 'a')
+    //     .set(2, 'b')
+    //     .set(3, 'c');
+    // log(map);
+
+    // const m = new Map();
+
+    // const hello = function() {log('hello');};
+    // m.set(hello, 'Hello ES6!');
+
+    // log(m);
+    // log(m.get(hello));
+
+    const m = new Map();
+
+    // m.set('edition', 6);
+    // m.set(262, 'standard');
+    // m.set(undefined, 'nah');
+
+    // log(m.has('edition'));
+    // log(m.has('years'));
+    // log(m.has(262));
+    // log(m.has(undefined));
+
+    // m.set(undefined, 'nah');
+    // log(m.has(undefined));
+
+    // log(m.delete(undefined));
+    // log(m.has(undefined));
+    // log(m.delete(undefined));
+
+    m.set('foo', true);
+    m.set('bar', false);
+
+    log(m.size);
+    m.clear();
+    log(m.size);
+
+</script>
