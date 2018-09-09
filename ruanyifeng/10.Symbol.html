@@ -500,20 +500,24 @@ iframe.contentWindow.Symbol.for('foo') === Symbol.for('foo');
 //     log(bar());
 // }
 
-class MyClass {
-    foo() { return 1;}
-    bar() { return 100;}
-    get [Symbol.unscopables] () {
-        return { foo: true, bar: false};
-    }
-}
+// class MyClass {
+//     foo() { return 1;}
+//     bar() { return 100;}
+//     get [Symbol.unscopables] () {
+//         return { foo: true, bar: false};
+//     }
+// }
 
-var foo = function () { return 2;};
-var bar = function () { return 200;};
+// var foo = function () { return 2;};
+// var bar = function () { return 200;};
 
-with (MyClass.prototype) {
-    log(foo());
-    log(bar());
-}
+// with (MyClass.prototype) {
+//     log(foo());
+//     log(bar());
+// }
 
+log(window);
+log(Symbol);
+log(window.Symbol);
+log(window.Symbol === Symbol);
 </script>
