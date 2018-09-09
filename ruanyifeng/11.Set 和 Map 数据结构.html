@@ -199,7 +199,7 @@
 <div id='myDiv'>
     
 </div>
-<script>
+<!-- <script>
     // const data = {};
     // const element = document.getElementById('myDiv');
     
@@ -343,29 +343,249 @@
     // log(m);
     // log(m.get(hello));
 
-    const m = new Map();
+    // const m = new Map();
 
-    // m.set('edition', 6);
-    // m.set(262, 'standard');
-    // m.set(undefined, 'nah');
+    // // m.set('edition', 6);
+    // // m.set(262, 'standard');
+    // // m.set(undefined, 'nah');
 
-    // log(m.has('edition'));
-    // log(m.has('years'));
-    // log(m.has(262));
-    // log(m.has(undefined));
+    // // log(m.has('edition'));
+    // // log(m.has('years'));
+    // // log(m.has(262));
+    // // log(m.has(undefined));
 
-    // m.set(undefined, 'nah');
-    // log(m.has(undefined));
+    // // m.set(undefined, 'nah');
+    // // log(m.has(undefined));
 
-    // log(m.delete(undefined));
-    // log(m.has(undefined));
-    // log(m.delete(undefined));
+    // // log(m.delete(undefined));
+    // // log(m.has(undefined));
+    // // log(m.delete(undefined));
 
-    m.set('foo', true);
-    m.set('bar', false);
+    // m.set('foo', true);
+    // m.set('bar', false);
 
-    log(m.size);
-    m.clear();
-    log(m.size);
+    // log(m.size);
+    // m.clear();
+    // log(m.size);
 
+    // const map = new Map([
+    //     ['F', 'no'],
+    //     ['T', 'yes'],
+    // ]);
+
+    // for(let key of map.keys()){
+    //     log(key);
+    // }
+
+    // for(let value of map.values()){
+    //     log(value);
+    // }
+
+    // for(let item of map.entries()){
+    //     log(item);
+    //     log(item[0], item[1]);
+    // }
+
+    // for(let [key, value] of map.entries()){
+    //     log(key, value);
+    // }
+
+    // for(let [key, value] of map){
+    //     log(key, value);
+    // }
+
+    // log(map[Symbol.iterator] === map.entries);
+
+    // const map = new Map([
+    //     [1, 'one'],
+    //     [2, 'two'],
+    //     [3, 'three'],
+    // ]);
+
+    // log(...map.keys());
+    // log([...map.keys()]);
+
+    // log([...map.values()]);
+    // log([...map.entries()]);
+    // log([...map]);
+    // log(...map);
+
+    // const map0 = new Map()
+    //     .set(1, 'a')
+    //     .set(2, 'b')
+    //     .set(3, 'c');
+
+    // const map1 = new Map([...map0].filter(([k, v]) => k < 3));
+    // log(map1);
+
+    // const map2 = new Map([...map0].map(([k, v]) => [k * 2, '_' + v]));
+    // log(map2);
+
+    // map0.forEach(function(value, key, map0) {
+    //     log("Key: %s, Value: %s", key, value);
+    // });
+
+    // const reporter = {
+    //     report: function(key, value) {
+    //         log("Key: %s, Value: %s", key, value);
+    //     }
+    // };
+
+    // map0.forEach(function(value, key, map) {
+    //     this.report(key, value);
+    //     log(this);
+    // }, reporter);
+
+    // const myMap = new Map()
+    //     .set(true, 7)
+    //     .set({foo: 3}, ['abc']);
+    // log(...myMap);
+    // log([...myMap]);
+
+    // const m = new Map([
+    //     [true, 7],
+    //     [{foo: 3}, ['abc']]
+    // ]);
+    // log(m);
+
+    // function strMapToObj(strMap) {
+    //     let obj = Object.create(null);
+    //     for(let [k, v] of strMap) {
+    //         obj[k] = v;
+    //     }
+    //     return obj;
+    // }
+
+    // const myMap = new Map()
+    //     .set('yes', true)
+    //     .set('no', false)
+    //     .set(undefined, 1);
+    // log(strMapToObj(myMap));
+
+    // function objToStrMap(obj) {
+    //     let strMap = new Map();
+    //     for(let k of Object.keys(obj)) {
+    //         // strMap.set(k, obj.k);
+    //         strMap.set(k, obj[k]);
+    //     }
+
+    //     return strMap;
+    // }
+
+    // log(objToStrMap({yes: true, no: false}));
+
+    // function strMapToJson(strMap) {
+    //     return JSON.stringify(strMapToObj(strMap));
+    // }
+
+    // let myMap = new Map().set('yes', true).set('no', false);
+    // log(strMapToJson(myMap));
+
+    // function mapToArrayJson(map) {
+    //     return JSON.stringify([...map]);
+    // }
+
+    // let myMap = new Map().set(true, 7).set({foo: 3}, ['abc']);
+    // log(mapToArrayJson(myMap));
+
+    // function jsonToStrMap(jsonStr) {
+    //     return objToStrMap(JSON.parse(jsonStr));
+    // }
+
+    // log(jsonToStrMap('{"yes": true, "no": false}'));
+
+    function jsonToMap(jsonStr) {
+        return new Map(JSON.parse(jsonStr));
+    }
+
+    log(jsonToMap('[[true,7], [{"foo":3},["abc"]]]'));
+</script> -->
+
+<div id='foo'></div>
+<div id='bar'></div>
+<div id='example'></div>
+<div id='logo'></div>
+<script>
+    // const wm1 = new WeakMap();
+    // const key = {foo: 1};
+    // wm1.set(key, 2);
+    // log(wm1.get(key));
+
+    // const k1 = [1, 2, 3];
+    // const k2 = [4, 5, 6];
+    // const wm2 = new WeakMap([[k1, 'foo'], [k2, 'bar']]);
+    // log(wm2.get(k2));
+
+    // const map = new WeakMap();
+    // map.set(1, 2);
+    // map.set(Symbol(), 2);
+    // map.set(null, 2);
+
+    // const e1 = document.getElementById('foo');
+    // const e2 = document.getElementById('bar');
+    // const arr = [
+    //     [e1, 'foo元素'],
+    //     [e2, 'bar元素']
+    // ];
+
+    // arr[0] = null;
+    // arr[1] = null;
+
+    // const wm = new WeakMap();
+    
+    // const element = document.getElementById('example');
+
+    // wm.set(element, 'some informatoin');
+    // log(wm.get(element));
+
+    // const wm = new WeakMap();
+    // let key = {};
+    // let obj = {foo: 1};
+
+    // wm.set(key, obj);
+    // obj = null;
+    // log(wm.get(key));
+
+    // const wm = new WeakMap();
+
+    // log(wm.size);
+    // log(wm.forEach);
+    // log(wm.clear);
+
+    // let myElement = document.getElementById('logo');
+    // let myWeakmap = new WeakMap();
+
+    // myWeakmap.set(myElement, {timesClicked: 0});
+
+    // myElement.addEventListener('click', function() {
+    //     let logoData = myWeakmap.get(myElement);
+    //     logoData.timesClicked++;
+    // }, false);
+
+    const _counter = new WeakMap();
+    const _action = new WeakMap();
+
+    class Countddown {
+        constructor(counter, action) {
+            _counter.set(this, counter);
+            _action.set(this, action);
+        }
+        dec() {
+            let counter = _counter.get(this);
+            if(counter < 1) return;
+            counter--;
+            _counter.set(this, counter);
+            if(counter === 0) {
+                _action.get(this)();
+            }
+        }
+    }
+
+    let c = new Countddown(2, () => log('DONE'));
+
+    c.dec();
+    c.dec();
+
+    c = null;
+    log(_counter);
 </script>
