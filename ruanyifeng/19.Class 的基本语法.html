@@ -1,0 +1,241 @@
+<script>
+const { log } = console;
+</script>
+
+<!-- <script>
+    function f(){
+        return 1;
+    }
+
+    log(f(), typeof f());
+    log(new f(), typeof new f());
+</script> -->
+
+<!-- <script>
+    // function Point(x, y){
+    //     this.x = x;
+    //     this.y = y;
+
+    //     log(this, typeof this);
+    // }
+
+    // Point(1, 2);
+    // log(this.x, window.y);
+
+    // new Point(1, 2);
+    // log(this.x, window.y);
+
+    // function Point(x, y){
+    //     this.x = x;
+    //     this.y = y;
+
+    //     // return {z: 500};
+    //     // return this;
+    // }
+
+    // Point.prototype.toString = function() {
+    //     return '(' + this.x + ', ' + this.y + ')';
+    // };
+
+    // var p = new Point(1, 2);
+    // log(p);
+    // log(p.toString());
+
+    // class Bar {
+    //     doStuff() {
+    //         log('stuff');
+    //     }
+    // }
+
+    // var b = new Bar();
+    // b.doStuff();
+
+    // class Point {
+    //     constructor(x, y) {
+    //         this.x = x;
+    //         this.y = y;
+    //     }
+
+    //     toString() {
+    //         return '(' + this.x + ', ' + this.y + ')';
+    //     }
+
+    //     toValue() {
+
+    //     }
+    // }
+    
+    // log(typeof Point);
+    // log(Point.prototype.constructor);
+    // log(Point === Point.prototype.constructor);
+
+    // function Point() {
+
+    // }
+
+    // Point.prototype = {
+    //     constructor() {},
+    //     toString() {},
+    //     toValue() {},
+    // };
+
+    // log(Point.prototype);
+
+    // class B {}
+    // let b = new B();
+    // log(b.constructor === B.prototype.constructor);
+
+    // class Point {
+    //     constructor() {
+
+    //     }
+    // }
+
+    // Object.assign(Point.prototype, {
+    //     toString() {},
+    //     toValue() {}
+    // });
+
+    // log(Point.prototype);
+    // log(Point.prototype.constructor === Point);
+
+    // log(Object.keys(Point.prototype));
+    // log(Object.getOwnPropertyNames(Point.prototype));
+
+    // var Point = function(x, y) {
+
+    // };
+
+    // Point.prototype.toString = function() {
+
+    // };
+
+    // log(Object.keys(Point.prototype));
+    // log(Object.getOwnPropertyNames(Point.prototype));
+
+    let methodName = 'getArea';
+
+    class Square {
+        constructor(length) {
+
+        }
+
+        [methodName]() {
+            log(1);
+        }
+    }
+    new Square()[methodName]();
+    new Square().getArea();
+    new Square()['getArea']();
+</script> -->
+
+<!-- <script>
+    // class Point {
+
+    // }
+    // class Point {
+    //     constructor() {}
+    // }
+
+    class Foo {
+        constructor() {
+            return Object.create(null);
+        }
+    }
+
+    log(new Foo());
+    log(new Foo() instanceof Foo);
+</script> -->
+
+<!-- <script>
+    // class Point {
+
+    // }
+
+    // // var point = Point(2, 3);
+    // var point = new Point(2, 3);
+    // log(point);
+
+    class Point {
+
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        toString() {
+            return '(' + this.x + ', ' + this.y + ')';
+        }
+    }
+
+    var point = new Point(2, 3);
+
+    log(point.toString());
+
+    log(point.hasOwnProperty('x'));
+    log(point.hasOwnProperty('y'));
+    log(point.hasOwnProperty('toString'));
+
+    log(Point.prototype.hasOwnProperty('x'));
+    log(Point.prototype.hasOwnProperty('toString'));
+
+    log(point.__proto__.hasOwnProperty('x'));
+    log(point.__proto__.hasOwnProperty('toString'));
+
+    log(point.__proto__ === Point.prototype);
+
+    var p1 = new Point(2, 3);
+    var p2 = new Point(3, 2);
+    log(p1.__proto__ === p2.__proto__);
+
+    p1.__proto__.printName = function() { return 'Oops'};
+
+    log(p1.printName());
+    log(p2.printName());
+
+    var p3 = new Point();
+    log(p3.printName());
+</script> -->
+
+<!-- <script>
+    // class MyClass {
+    //     getClassName() {
+    //         return MyClass.name;
+    //     }
+    // }
+
+    // let o = new MyClass();
+    // log(o.getClassName());
+    // log(MyClass.name);
+
+    // const MyClass = class Me {
+    //     getClassName() {
+    //         return Me.name;
+    //     }
+    // }
+
+    // let inst = new MyClass();
+    // log(inst.getClassName());
+    // // log(Me.name);
+    // log(MyClass.name);
+
+    // const MyClass = class {};
+    // log(MyClass.name);
+
+    let person = new class {
+        constructor(name) {
+            this.name = name;
+        }
+
+        sayName() {
+            log(this.name);
+        }
+    }('张三');
+
+    person.sayName();
+</script> -->
+
+<script>
+    // new Foo();
+    // class Foo {}
+</script>
