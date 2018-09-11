@@ -1,0 +1,546 @@
+<script>
+const { log } = console;
+</script>
+
+<!-- <script>
+// class Point {
+//     constructor(x, y) {
+//         this.x = x;
+//         this.y = y;
+//     }
+
+//     toString() {
+//         return '(' + this.x + ', ' + this.y + ')';
+//     }
+// }
+
+// class ColorPoint extends Point {
+//     constructor(x, y, color) {
+//         super(x, y);    // 调用父类的constructor(x, y)
+//         this.color = color;
+//     }
+
+//     toString() {
+//         return this.color + ' ' + super.toString(); // 调用父类的toString()
+//     }
+// }
+
+// // log(Point == ColorPoint);
+// // log(Point === ColorPoint);
+
+// let cp = new ColorPoint(1, 2, 'red');
+// log(cp);
+// log(cp.toString());
+
+// class Point {
+
+// }
+
+// class ColorPoint extends Point {
+//     constructor() {
+//         super();
+//     }
+// }
+
+// class ColorPoint extends Point {
+//     constructor(...args) {
+//         super(...args);
+//         log(...args);
+//     }
+// }
+
+// let cp = new ColorPoint();
+
+// class Point {
+//     constructor(x, y) {
+//         this.x = x;
+//         this.y = y;
+//     }
+// }
+
+// class ColorPoint extends Point {
+//     constructor(x, y, color) {
+//         // this.color = color;
+//         super(x, y);
+//         this.color = color;
+//     }
+// }
+
+// let cp = new ColorPoint(1, 2, 'red');
+
+// log(cp instanceof ColorPoint);
+// log(cp instanceof Point);
+
+class A {
+    static hello() {
+        log('hello world');
+    }
+}
+
+class B extends A {
+
+}
+
+B.hello();
+
+</script> -->
+
+<!-- <script>
+class Point {
+
+}
+
+class ColorPoint extends Point {
+
+}
+
+log(Object.getPrototypeOf(ColorPoint));
+log(Object.getPrototypeOf(ColorPoint) === Point);
+</script> -->
+
+<!-- <script>
+// class A {
+//     constructor() {
+//         log(new.target.name);
+//     }
+// }
+
+// class B extends A {
+//     constructor() {
+//         super();
+//         // log(super());
+//     }
+
+//     // m() {
+//     //     super();
+//     // }
+// }
+
+// class A {
+//     p() {
+//         return 2;
+//     }
+// }
+
+// class B extends A {
+//     constructor() {
+//         super();
+//         log(super.p());
+//         log(A.prototype.p());
+//     }
+// }
+
+// let b = new B();
+
+// class A {
+//     constructor() {
+//         this.p = 2;
+//         this.f = function() { log('f'); };
+//     }
+
+//     foo() {
+//         return 1;
+//     }
+// }
+
+// class B extends A {
+//     get m() {
+//         return super.p;
+//     }
+
+//     get n () {
+//         return super.foo();
+//     }
+
+//     x() {
+//         return super.foo();
+//     }
+
+//     y() {
+//         super.f();
+//     }
+// }
+
+// let b = new B();
+// b.f();
+// log(b.m);
+// log(b.n);
+// log(b.x());
+// b.y();
+
+// class A {}
+// A.prototype.x = 2;
+
+// class B extends A {
+//     constructor() {
+//         super();
+//         log(super.x);
+//     }
+// }
+
+// let b = new B();
+
+// class A {
+//     constructor() {
+//         this.x = 1;
+//     }
+
+//     print() {
+//         log(this.x);
+//         log(this);
+//     }
+// }
+
+// // new A().print();
+
+// class B extends A {
+//     constructor() {
+//         super();
+//         this.x = 2;
+//     }
+
+//     m() {
+//         super.print();
+//         // super.print.call(this);
+//     }
+// }
+
+// new B().m();
+
+// class A {
+//     constructor() {
+//         this.x = 1;
+//     }
+
+//     x() { }
+// }
+
+// class B extends A {
+//     constructor() {
+//         super();
+//         this.x = 2;
+        
+//         log(this.x === super.x);
+        
+//         log(super.x);
+
+//         super.x = 3;
+//         log(super.x);
+
+//         log(this.x);
+        
+//         log(super.x === A.prototype.x);
+//     }
+// }
+
+// new B();
+
+// class Parent {
+//     static myMethod(msg) {
+//         log('static', msg);
+//     }
+
+//     myMethod(msg) {
+//         log('instance', msg);
+//     }
+// }
+
+// class Child extends Parent {
+//     static myMethod(msg) {
+//         super.myMethod(msg);
+//     }
+
+//     myMethod(msg) {
+//         super.myMethod(msg);
+//     }
+// }
+
+// Child.myMethod(1);
+
+// var child = new Child();
+// child.myMethod(2);
+
+// class A {
+//     constructor() {
+//         this.x = 1;
+//     }
+
+//     static print() {
+//         log(this.x);
+//         log(this);
+//     }
+// }
+
+// class B extends A {
+//     constructor() {
+//         super();
+//         this.x = 2;
+//     }
+
+//     static m() {
+//         super.print();
+//     }
+// }
+
+// B.x = 3;
+// B.m();
+
+// A.x = 100;
+// A.print();
+
+// class A {}
+
+// class B extends A {
+//     constructor() {
+//         super();
+//         // log(super);
+//         log(super.valueOf());
+//         log(super.valueOf() instanceof B);
+//     }
+// }
+
+// new B();
+
+var obj =  {
+    toString() {
+        return 'MyObject; ' + super.toString();
+    }
+}
+
+log(obj.toString());
+
+</script> -->
+
+<!-- <script>
+// class A {
+//     constructor() { this.x = 1; }
+//     x() {}
+// }
+
+// // log(A.prototype);
+// // log(A.__proto__);
+// // log(A.prototype.constructor === A.__proto__);
+
+// class B extends A {
+
+// }
+
+// log(B.__proto__ === A);
+// // log(B.prototype);
+// log(B.prototype.__proto__ === A.prototype);
+
+// // log(B.prototype);
+// // log(B.__proto)
+
+
+
+// class A {
+
+// }
+
+// class B {
+
+// }
+
+// Object.setPrototypeOf(B.prototype, A.prototype);
+
+// Object.setPrototypeOf(B, A);
+
+// const b = new B();
+
+// log(b);
+
+// Object.setPrototypeOf = function (obj, proto) {
+//     obj.__proto__ = proto;
+//     return obj;
+// };
+
+// class A extends Object {
+// }
+
+// log(A.__proto__ === Object);
+// log(A.prototype.__proto__ === Object.prototype);
+
+// class A {}
+// log(A.__proto__ === Function.prototype);
+// log(A.prototype.__proto__ === Object.prototype);
+
+class Point {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+class ColorPoint extends Point {
+    constructor(x, y, color) {
+        super(x, y);
+        this.color = color;
+    }
+}
+
+var p1 = new Point(2, 3);
+var p2 = new ColorPoint(2, 3, 'red');
+
+log(p2.__proto__ === p1.__proto__);
+log(p2.__proto__.__proto__ === p1.__proto__);
+
+p2.__proto__.__proto__.printName = function() {
+    log('Ha');
+};
+
+p1.printName();
+
+
+</script> -->
+
+<!-- <script>
+// function MyArray() {
+//     Array.apply(this, arguments);
+// }
+
+// MyArray.prototype = Object.create(Array.prototype, {
+//     constructor: {
+//         value: MyArray,
+//         writable: true,
+//         configurable: true,
+//         enumerable: true
+//     }
+// });
+
+// var colors = new MyArray();
+// colors[0] = 'red';
+// log(colors.length);
+
+// colors.length = 0;
+// log(colors[0]);
+
+// var e = {};
+
+// log(Object.getOwnPropertyNames(Error.call(e)));
+
+// log(Object.getOwnPropertyNames(e));
+
+
+// class MyArray extends Array {
+//     constructor(...args) {
+//         super(...args);
+//     }
+// }
+
+// var arr = new MyArray();
+// arr[0] = 12;
+// log(arr.length);
+
+// arr.length = 0;
+// log(arr[0]);
+
+// class VersionedArray extends Array {
+//     constructor() {
+//         super();
+//         this.history= [[]];
+//     }
+
+//     commit() {
+//         this.history.push(this.slice());
+//     }
+
+//     revert() {
+//         this.splice(0, this.length, ...this.history[this.history.length - 1]);
+//     }
+// }
+
+// var x = new VersionedArray();
+
+// x.push(1);
+// x.push(2);
+// log(x);
+// log(x.history);
+
+// x.commit();
+// log(x.history)
+
+// x.push(3);
+// log(x);
+// log(x.history);
+
+// x.revert();
+// log(x);
+
+
+// class ExtendableError extends Error {
+//     constructor(message) {
+//         super();
+//         this.message = message;
+//         this.stack = (new Error()).stack;
+//         this.name = this.constructor.name;
+//     }
+// }
+
+// class MyError extends ExtendableError {
+//     constructor(m) {
+//         super(m);
+//     }
+// }
+
+// var myerror = new MyError('ll');
+// log(myerror.message);
+// log(myerror instanceof Error);
+// log(myerror.name);
+// log(myerror.stack);
+
+class NewObj extends Object {
+    constructor() {
+        super(...arguments);
+        log(arguments);
+        log(...arguments);
+    }
+}
+
+var o = new NewObj({attr: true});
+log(o.attr === true);
+log(o.attr);
+
+</script> -->
+
+<script>
+// const a = {
+//     a: 'a'
+// };
+
+// const b ={
+//     b: 'b'
+// };
+
+// const c = {...a, ...b};
+// log(c);
+
+function mix(...mixins) {
+    class Mix {}
+
+    for(let mixin of mixins) {
+        copyProperties(Mix.prototype, mixin);
+        copyProperties(Mix.prototype, Reflect.getPrototypeOf(mixin));
+    }
+
+    return Mix;
+}
+
+function copyProperties(target, source) {
+    for(let key of Reflect.ownKeys(source)) {
+        if( key != 'constructor'
+        && key !== 'prototype'
+        && key!= 'name'
+        ){
+            let desc = Object.getOwnPropertyDescriptor(source, key);
+            Object.defineProperty(target, key, desc);
+        }
+    }
+}
+
+class DistributedEdit extends mix(Loggable, Serializable) {
+
+}
+
+log(new DistributedEdit(1, 2));
+</script>
