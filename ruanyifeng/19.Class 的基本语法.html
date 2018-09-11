@@ -245,6 +245,286 @@ const { log } = console;
     }
 </script> -->
 
-<script>
+<!-- <script>
+    // class Widget {
 
+    //     // 公有方法
+    //     foo(baz) {
+    //         this._bar(baz);
+    //     }
+
+    //     // 私有方法
+    //     _bar(baz) {
+    //         return this.snaf = baz;
+    //     }
+    // }
+
+    // class Widget {
+    //     foo(baz) {
+    //         bar.call(this, baz);
+    //     }
+    // }
+
+    // function bar(baz) {
+    //     return this.snaf = baz;
+    // }
+
+    // const bar = Symbol('bar');
+    // const snaf = Symbol('snaf');
+    // const x = 's'
+
+    // class MyClass {
+    //     foo(baz) {
+    //         this[bar](baz);
+    //     }
+
+    //     [bar](baz) {
+    //         return this[snaf] = baz;
+    //     }
+
+    //     [x]() {
+    //         log('hello');
+    //     }
+    // }
+
+    // let w = new MyClass();
+    // w.foo(2);
+    // log(w);
+    // w[x]();
+
+
+
+</script> -->
+
+<!-- <script>
+    // class Logger {
+    //     constructor() {
+    //         this.printName = this.printName.bind(this);
+    //     }
+
+    //     printName(name = 'there') {
+    //         log(this);
+    //         this.print(`hello ${name}`);
+    //     }
+
+    //     print(text) {
+    //         log(text);
+    //     }
+    // }
+
+    // class Logger {
+    //     constructor() {
+    //         this.printName = (name = 'there') => {
+    //             this.print(`Hello ${name}`);
+    //         }
+    //     }
+
+    //     print(text) {
+    //         log(text);
+    //     }
+    // }
+
+    // const logger = new Logger();
+    // const { printName } = logger;
+    // printName();
+
+    class Logger {
+    printName(name = 'there') {
+        this.print(`Hello ${name}`);
+    }
+
+    print(text) {
+        console.log(text);
+    }
+    }
+
+    function selfish(target) {
+        const cache = new WeakMap();
+        const handler = {
+            get (target, key) {
+                const value = Reflect.get(target, key);
+                if(typeof value !== 'function') {
+                    return value;
+                }
+                if(!cache.has(value)) {
+                    cache.set(value, value.bind(target));
+                }
+                return cache.get(value);
+            }
+        };
+        const proxy = new Proxy(target, handler);
+        return proxy;
+    }
+
+    const logger = selfish(new Logger());
+
+    const { printName } = logger;
+    printName();
+</script> -->
+
+<!-- <script>
+    class Point {}
+    log(Point.name);
+</script> -->
+
+<!-- <script>
+    // class MyClass {
+    //     constructor() {
+
+    //     }
+
+    //     get prop() {
+    //         return 'getter';
+    //     }
+
+    //     set prop(value) {
+    //         log('setter: ' + value);
+    //     }
+    // }
+
+    // let inst = new MyClass();
+    // inst.prop = 123;
+    // log(inst.prop);
+
+    class CustomHTMLElement {
+        constructor(element) {
+            this.element = element;
+        }
+
+        get html() {
+            return this.element.innerHTML;
+        }
+
+        set html(value) {
+            this.element.innerHTML = value;
+        }
+    }
+
+    var descriptor = Object.getOwnPropertyDescriptor(CustomHTMLElement.prototype, 'html');
+
+    log('get' in descriptor);
+    log('set' in descriptor);
+</script> -->
+
+<!-- <script>
+    class Foo {
+        constructor(...args) {
+            this.args = args;
+        }
+
+        *[Symbol.iterator]() {
+            for(let arg of this.args) {
+                yield arg;
+            }
+        }
+    }
+
+    for(let x of new Foo('hello', 'world')) {
+        log(x);
+    }
+</script> -->
+
+<!-- <script>
+    // class Foo {
+    //     static classMethod() {
+    //         return 'hello';
+    //     }
+    // }
+
+    // log(Foo.classMethod());
+
+    // var foo = new Foo();
+    // log(foo.classMethod);
+    // foo.classMethod();
+
+    // class Foo {
+    //     static bar() {
+    //         this.baz();
+    //         Foo.baz();
+    //     }
+
+    //     static baz() {
+    //         log('hello');
+    //     }
+
+    //     baz() {
+    //         log('world');
+    //     }
+    // }
+
+    // Foo.bar();
+
+    // class Foo {
+    //     static classMethod() {
+    //         return 'hello';
+    //     }
+    // }
+
+    // class Bar extends Foo {
+
+    // }
+
+    // log(Bar.classMethod());
+
+    class Foo {
+        static classMethod() {
+            return 'hello';
+        }
+    }
+
+    class Bar extends Foo {
+        static method() {
+            return super.classMethod() + ', too';
+        }
+    }
+
+    log(Bar.method());
+</script> -->
+
+<!-- <script>
+    // class Foo {}
+
+    // Foo.prop = 1;
+    // log(Foo.prop);
+
+    // class Foo {
+    //     static prop: 2
+    // }
+
+    // class ReactCounter extends React.Component {
+    //     constructor(props) {
+    //         super(props);
+    //         this.stat = {
+    //             count: 0
+    //         };
+    //     }
+    // }
+</script> -->
+
+<script>
+    // function Person(name) {
+    //     if(new.target !== undefined) {
+    //         this.name = name;
+    //         log(new.target);
+    //     }
+    //     else{
+    //         throw new Error('必须使用 new 命令生成实例');
+    //     }
+    // }
+
+    // function Person(name) {
+    //     if(new.target === Person) {
+    //         this.name = name;
+    //         log(new.target);
+    //     }
+    //     else{
+    //         log(new.target);
+    //         throw new Error('必须使用 new 命令生成实例');
+    //     }
+    // }
+    
+    // var person = new Person('张三'); 
+    // var notAPerson = Person.call(person, '张三'); 
+
+    
 </script>
